@@ -1,4 +1,19 @@
 'use strict'
+
+//open asking for input for name account and pin
+
+function haveAccount (){
+  
+  prompt("Have account?",Yes, No){
+    //do you have an account?
+    if Yes /*True?*/ AcctHolder()
+    //create new account
+  } else  No /*false??*/newUser(){
+
+  };
+  };
+
+
 function Calculator (){
     //set variables for deposit or withdrawl amount
     this.deposit= 0;
