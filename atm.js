@@ -46,16 +46,14 @@ function Calculator (){
   //Make account holder object
   function AcctHolder (name, acct, pin, bal){
 
-    this.name = name;
-    this.acct = 0;
+    
+    
     this.pin = 0; //need to test if true
     this.bal = 0;
   
     this.user = function(){ //get new user info
       //user name
-      this.name = prompt ("Enter name" + "");
-      //user account number
-      this.acct = Number(prompt ("Enter name account", 0));//prompt placeholder until input is set
+      
       //user pin number
       this.pin = Number(prompt ("Enter PIN", 0 ));
       //user beginning balance??
@@ -84,3 +82,22 @@ function Calculator (){
   //get balance and print
 
   //local storage......
+ //document.createElement("Deposit");
+   // deposit.innerHTML = "Deposit";
+    //document.forms.appendChild(deposit)
+    //make new account
+        
+        //prompt("Create new account");
+        //enterNew.innerHTML+= ("Enter New PIN");
+
+        //bankAccounts.push(newAccount);
+
+        //document.getElementById("new").innerHTML  += "balance" + newAccount.balance + "PIN:" + newAccount.pin + "<br";
+
+        //gather info from input
+    
+    //output 
+
+    let newAccount = new Account(FU);
+
+    let enterNew = document.getElementById("enterPin");
