@@ -1,14 +1,17 @@
 'use strict'
 //ATM constructor
 let atm = new Atm();
+atm.createAccount (1313, 2200);
+atm.createAccount (4242, 125);
+atm.createAccount (1013, 1900);
 
 function Atm() {
 
     this.accounts = []; //empty array for acct
     this.currentAccount = null; //set new account ammount to empty
 
-    this.createAccount = function(pin){
-        let newAccount = new Account(pin);
+    this.createAccount = function(pin, balance) {
+        let newAccount = new Account(pin, balance);
         this.accounts.push(newAccount);
         this.currentAccount = newAccount;
         return newAccount;
@@ -28,19 +31,24 @@ function Atm() {
     this.configuration = {};
 }
 
-function Account(pin) {
+function Account(pin, balance) {
     this.pin = pin;
-    this.balance = 0;
+    this.balance = balance;
+    
 
     this.getBalance = function() {
         return(this.balance);
     }
 
-    this.withdrawl = function() {
+    this.withdrawl = function(amount) {
+        console.log( this.balance);
+        this.balance -= amount;
+        console.log (this.balance);
 
     }
 
-    this.deposit = function() {
+    this.deposit = function(amount) {
+        this.balance += amount;
 
 
     }
@@ -56,7 +64,7 @@ function returnToLogIn() {
 
 function showBalance() {
 
-    document.getElementById("showBalance").innerHTML=atm.currentAccount.balance;
+    document.getElementById("showBalance").value=atm.currentAccount.balance;
 }
 
 function confirmAccount() {
@@ -76,7 +84,9 @@ function confirmAccount() {
 function newAccount() {
 
     let pin = parseInt(document.getElementById("enterPin").value);
-    atm.createAccount(pin);
+    
+    let balance = document.getElementById("initialDeposit").value;
+    atm.createAccount(pin,balance);
     //shows menu upon successful entry
     displayMenu(); 
 
@@ -88,14 +98,33 @@ function newAccount() {
     document.getElementById("menu").style.display= "block";
  }
  
+function atmMath() {
+
+    let withdrawl = document.getElementById("withdrawl").value;
+    let deposit = document.getElementById("deposit").value;
+    let showBalance = document.getElementById("showBalance").value;
+    
+    
+    console.log (withdrawl)
+    console.log (atm.currentAccount.pin)
+    console.log (atm.createAccount.balance)
+    
+    if (withdrawl != ""){
+        atm.currentAccount.withdrawl(parseFloat(withdrawl))
+        document.getElementById("showBalance").value = atm.currentAccount.balance;
+    
+    } else if (deposit != "") {
+        atm.currentAccount.deposit(parseFloat(deposit))
+        document.getElementById("showBalance").value = atm.currentAccount.balance;
+
+    } else {
+        document.getElementById("showBalance").value=atm.currentAccount.balance;
+    }
+
+
+} 
+    
  
- let accounts = [
-    {
-      pin : 1023,
-      balance: 0.00 
-    },
-    {
-      pin: 3023, 
-      balance: 100.00
-    }, 
-  ]
+
+    
+   
