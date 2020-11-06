@@ -49,7 +49,7 @@ function Account(pin, balance) {
 
     this.deposit = function(amount) {
         console.log(amount);
-        this.balance = Number(this.balance)+= amount;
+        this.balance = Number(this.balance)+ amount;
         console.log(amount);
 
     }
