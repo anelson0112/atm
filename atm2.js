@@ -41,15 +41,16 @@ function Account(pin, balance) {
     }
 
     this.withdrawl = function(amount) {
-        console.log( this.balance);
+        console.log( typeof balance);
         this.balance -= amount;
-        console.log (this.balance);
+        console.log (typeof balance);
 
     }
 
     this.deposit = function(amount) {
-        this.balance += amount;
-
+        console.log(amount);
+        this.balance = Number(this.balance)+= amount;
+        console.log(amount);
 
     }
 }
@@ -87,6 +88,7 @@ function newAccount() {
     
     let balance = document.getElementById("initialDeposit").value;
     atm.createAccount(pin,balance);
+    console.log (typeof balance)
     //shows menu upon successful entry
     displayMenu(); 
 
@@ -104,11 +106,11 @@ function atmMath() {
     let deposit = document.getElementById("deposit").value;
     let showBalance = document.getElementById("showBalance").value;
     
-    
+    console.log(typeof deposit)
     console.log (withdrawl)
     console.log (atm.currentAccount.pin)
     console.log (atm.createAccount.balance)
-    
+
     if (withdrawl != ""){
         atm.currentAccount.withdrawl(parseFloat(withdrawl))
         document.getElementById("showBalance").value = atm.currentAccount.balance;
