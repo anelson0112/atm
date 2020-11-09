@@ -10,13 +10,24 @@
     <body>
 
         <h1>ATM</h1>
+        <p>Enter PIN to check your account. </p>
             <div id = "intro">
-                <input  id= "enterPin"  value= "" >
-                <label>Enter PIN</label>
-                <button onclick= "confirmAccount()"> Confirm Account </button>
-                <input type = "number" id = "initialDeposit" value = ""><label>Initial Deposit Amount</label>
-                <button onclick= "newAccount()"> Create New Account</button>
-                
+                <div class="row">
+                    
+                        <input  id= "enterPin"  value= "" >
+                        <label>Enter PIN</label>
+                     
+                        <button onclick= "confirmAccount()"> Confirm Account </button>
+                    
+                </div>
+                <div class="row">
+                    
+                        <input type = "number" id = "initialDeposit" value = "">
+                        <label>Initial Deposit Amount</label>
+                       
+                        <button onclick= "newAccount()"> Create New Account</button>
+                    
+                </div>
             </div>
             
             <form id="menu">

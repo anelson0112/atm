@@ -24,6 +24,11 @@ function Atm() {
                 //loops through accounts returns one if PIN matches
                 this.currentAccount = this.accounts[i];
                 return this.accounts[i];
+                
+
+            } else {
+                alert("Invalid PIN! Please create new account");
+                createAccount();
             }
         }
         return null;
@@ -74,15 +79,12 @@ function confirmAccount() {
     let pin = parseInt(document.getElementById("enterPin").value); 
     atm.getAccount(pin);
 
-    if (atm.currentAccount === null){
+   
 
-        alert ('Invalid PIN, create a new account');
-        
-    } else{
         displayMenu();
     }
-    return;
-}
+    
+
 //creates new account and pushes it into constructor array
 function newAccount() {
 
