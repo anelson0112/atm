@@ -28,7 +28,8 @@ function Atm() {
 
             } else {
                 alert("Invalid PIN! Please create new account");
-                createAccount();
+                newAccount();
+                return;
             }
         }
         return null;
@@ -82,6 +83,7 @@ function confirmAccount() {
    
 
         displayMenu();
+        return;
     }
     
 
